@@ -1,0 +1,20 @@
+{% extends "base.html.twig"%};
+
+{# Si quiero sobreescribir un bloque de un padre se haria, asi, las plantillas hijas solo sobreescriben bloques del padre.
+
+SE pueden poner bloques donde sea para cambiarlo con las hijas. se podria hacer tb estos cambios con la funcion "include" 
+{% include 'header.html%} indicandolo en un html aparte
+#}
+
+{% block %}
+<ul>
+    <li>Nombre: {{nombre}}</li>
+    <li>Apellidos: {{apellidos}}</li>
+    <li>Edad: {{edad}}</li>
+</ul>
+
+{% endblock %}
+{% block title%}Esto es un usuario{% endblock %}
+
+{% block javascripts %}
+{% endblock %}

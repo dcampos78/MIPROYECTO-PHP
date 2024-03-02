@@ -3,3 +3,8 @@ controllers:
         path: ../src/Controller/
         namespace: App\Controller
     type: attribute
+
+saludo:
+    path: /hello
+    controller: App\Controller\DefaultController::hola
+# primero se pone una palabra clave (saludo), va por tabulaciones, cuidado con ellas.Luego configuramos path y controller. El path es lo que va en el navegador, y el controller es lo que ejecuta en el path. Aqui se debe arrancar con localhost:8080/hello

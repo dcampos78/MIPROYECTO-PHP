@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Welcome!{% endblock %}</title>
+        <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text><text y=%221.3em%22 x=%220.2em%22 font-size=%2276%22 fill=%22%23fff%22>sf</text></svg>">
+        {% block stylesheets %}
+        {% endblock %}
+
+        {% block javascripts %}
+        {% endblock %}
+    </head>
+    <body>
+        {# {% block body %}{% endblock %} #}
+        <h1>Me llamo {{nombre |upper| replace({"A": "4", "V": "3"})}} {{apellidos}}</h1>
+        <h2>Y tengo {{edad}} años</h2>
+    </body>
+</html>
+{# twig tiene su propia syntaxis, y es un complemento para pintar html.
+{% %} los procentajes ejecutan sentencias, funciones, bucles, etc..
+{{}} imprime el resultado de una expresion para poner comentarios poniendo # al ppio y al final #}
+{# Para pintar variables pasadas en el controlador, pondri {{}} y el nombre de la variable #}
+{# Se puede crear tb nueva variable con "set"
+{% set foo = 'bar' %}
+
+Usar un if. 
+Tb se pueden manejar array y objetos 
+{% if not usuario.registrado%}
+    <p>Registrate para acceder.</p>
+{% endif%}
+
+Tb bucles For
+{% for usuario in usuarios %}
+    <li> {{usuario.nombre}}</li>
+{% endfor %}
+
+Tb hay filtros, son funciones que se aplican a un valor. Se pueden concatenar con | Hay muchos fltros (capitalize, replace, upper, lower, slice, sort, date etc.....se pueden buscar en twig.symfony.com)
+{{'españa | capitalize}} #España
+
+Tb hay funciones (max, min,  form, etc...)
+{{max (1,2,3)}}
+
+#}
+{# twig tb tiene herencia de plntillas.Lo que habria que hacer para heredar una de otra es poner {% extends "nombre otra plantilla%}
+
+Para cambiar solo un bloque definiriamos un bloque {% block%}{%endblock%} #}
+
